@@ -1,38 +1,286 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+:root{
+  --softCyan:hsl(174, 77%, 80%);
+  --strongCyan:hsl(174, 86%, 45%);
+  --grayishRed:hsl(14, 92%, 95%);
+  --lightRed:hsl(15, 100%, 70%);
+  --paleBlue:hsl(226, 100%, 87%);
+  --white:hsl(0, 0%, 100%);
+  --veryPaleBlue:hsl(230, 100%, 99%);
+  --lightGrayishBlue1:hsl(224, 65%, 95%);
+  --lightGrayishBlue2:hsl(223, 50%, 87%);
+  --grayishBlue: hsl(225, 20%, 60%);
+  --darkBlue: hsl(227, 35%, 25%);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body{
+  font-size: 15px;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
 }
 
-.App-header {
-  background-color: #282c34;
+
+.container{
   min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  background: var(--veryPaleBlue);
+  background-image: url(./assets/bg-pattern.svg);
+  background-repeat: no-repeat;
+  padding: 4rem 0;
+}
+
+header{
+  text-align: center;
+  width: 90vw;
+  margin: 0 auto;
+  background-image: url(./assets/pattern-circles.svg);
+  background-repeat: no-repeat;
+  background-size: 200px;
+  background-position: 50% 20%;
+  padding: 5rem 1rem 2rem 1rem;
+}
+
+header h1{
+  color: var(--darkBlue);
+  margin-bottom: 1rem;
+}
+
+header p{
+  color: var(--grayishBlue);
+  width: 14rem;
+  margin: 0 auto;
+}
+
+
+.card{
+  background:var(--white);
+  padding:2rem 0;
+  text-align: center;
+  border-radius: 15px;
+  margin-top: 4rem;
+  box-shadow: 0 5px 15px 2px rgba(0,0,0, 0.3);
+}
+
+.card h3{
+  color: var(--grayishBlue);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+  font-weight: 800;
+}
+
+.card h1{
+  margin-top: 1.5rem;
+  font-weight: 800;
+  font-size: 33px;
+  color: var(--darkBlue);
+}
+
+.month{
+  color: var(--grayishBlue);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.billing{
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 2rem;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.billing h4{
+  margin-right: 0.4rem;
+  font-size: 13px;
+  color: var(--grayishBlue);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.discount{
+  background: var(--grayishRed);
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  color: var(--lightRed);
+  margin-left: 0.4rem;
 }
+
+.underline{
+  width: 100%;
+  height: 1px;
+  background: var(--grayishBlue);
+  margin: 2rem 0;
+}
+
+.services{
+  display: grid;
+  gap:0.8rem;
+  font-size: 17px;
+  color: var(--grayishBlue);
+}
+
+.check{
+  margin-right: 1rem;
+  width: 20px;
+}
+
+.btn{
+  margin-top: 2rem;
+  width: 220px;
+  padding: 1.4rem ;
+  color: var(--paleBlue);
+  background: var(--darkBlue);
+  border: transparent;
+  outline: transparent;
+  border-radius: 42px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.4s all linear;
+}
+
+/* checkbox */
+
+.switch{
+  width: 45px;
+  height: 25px;
+  position: relative;
+  margin-right: 0.4rem;
+}
+
+.switch input{
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider{
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--lightGrayishBlue2);
+  border-radius: 18px;
+  transition: 0.4s all linear;
+}
+
+.slider::before{
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  background: var(--white);
+  border-radius: 50%;
+  bottom: 5px;
+  left: 5px;
+}
+
+.slider:hover{
+  background: var(--strongCyan);
+}
+
+/* range slider */
+
+.slide-container{
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.range{
+  -webkit-appearance: none;
+  width: 90%;
+  height: 10px;
+  background: var(--softCyan);
+  outline: none;
+  transition: .2s;
+  border-radius: 10px;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--strongCyan);
+  cursor: pointer;
+  background-image: url(./assets/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
+  box-shadow: 0 3px 20px 2px var(--strongCyan);
+  transition: 0.4s all linear;
+}
+
+.range::-webkit-slider-thumb:hover{
+  opacity: 0.7;
+}
+
+
+@media screen and (min-width:1200px){
+
+  header{
+    padding-bottom: 5rem;
+  }
+header p{
+  width: 100%;
+  margin: 0 0;
+}
+
+.card{
+  width: 40vw;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 4rem;
+}
+
+.card h3{
+  text-align: left;
+  transform: translateX(2rem);
+}
+
+.slide-container{
+  margin-top: 5rem;
+  margin-bottom: -2rem;
+}
+
+.card h1{
+  text-align: right;
+  transform: translate(-2rem,-8rem);
+
+}
+
+.billing{
+  justify-content: center;
+}
+
+.switch{
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.services{
+  float: left;
+  transform: translateX(3rem);
+  text-align: left;
+}
+
+.btn{
+  float: right;
+  width: 180px;
+  padding:0.85rem;
+  transform: translateX(-2rem);
+}
+
+
+}
+
