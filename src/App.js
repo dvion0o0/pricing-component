@@ -7,6 +7,7 @@ function App() {
       <section className="container">
         <Header />
         <Card />
+        <p className="copyright">Coded with ❤️ By Digvijay.</p>
       </section>
     </main>
   );
